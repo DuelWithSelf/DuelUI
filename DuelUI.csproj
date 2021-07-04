@@ -33,6 +33,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -77,12 +80,27 @@
     <Compile Include="CommonFrm\NavSelector.xaml.cs">
       <DependentUpon>NavSelector.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Common\AppConverters.cs" />
     <Compile Include="Common\AppEvents.cs" />
+    <Compile Include="Common\AppSettings.cs" />
+    <Compile Include="Common\IniFileHelper.cs" />
     <Compile Include="Custom\IconMenu.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Modals\About\ModalViewAbout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modals\Message\ModalViewMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modals\Setting\ModelViewSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Modules\Home\ModuleViewHome.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -125,6 +143,16 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modals\About\ModalViewAbout.xaml.cs">
+      <DependentUpon>ModalViewAbout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modals\BaseModalView.cs" />
+    <Compile Include="Modals\Message\ModalViewMessage.xaml.cs">
+      <DependentUpon>ModalViewMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modals\Setting\ModelViewSettings.xaml.cs">
+      <DependentUpon>ModelViewSettings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Modules\BaseModuleView.cs" />
     <Compile Include="Modules\Home\ModuleViewHome.xaml.cs">
       <DependentUpon>ModuleViewHome.xaml</DependentUpon>
@@ -169,6 +197,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon.ico" />
+  </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Assets\MyShop.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

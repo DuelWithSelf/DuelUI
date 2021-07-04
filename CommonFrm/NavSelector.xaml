@@ -3,7 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:CommonFrm="clr-namespace:DuelUI.CommonFrm"
-    Height="50" Width="1600">
+    Height="50" Width="1400">
     <UserControl.RenderTransform>
         <TransformGroup>
             <ScaleTransform ScaleX="{Binding Path=ScaleX}" ScaleY="{Binding Path=ScaleY}"/>

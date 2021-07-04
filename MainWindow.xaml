@@ -4,8 +4,8 @@
         xmlns:Custom="clr-namespace:DuelUI.Custom"
         xmlns:CommonFrm="clr-namespace:DuelUI.CommonFrm"
         WindowStyle="None" WindowState="Normal" WindowStartupLocation="CenterScreen"
-        Background="Transparent" AllowsTransparency="True"
-        Title="Duel UI" Height="796" Width="1280">
+        Background="Transparent" AllowsTransparency="True" Icon="Icon.ico"
+        Title="Duel UI" Height="680" Width="1000">
     <Border Background="{DynamicResource Brush.Dark}" CornerRadius="8"
             ClipToBounds="True">
         <Grid>
@@ -27,8 +27,8 @@
                             IconWidth="8" IconHeight="8" FocusBackground="Transparent"/>
                     </StackPanel>
                     <Canvas x:Name="CvNavMenus">
-                        <CommonFrm:NavSelector x:Name="NavSelector" X="-552.5"/>
-                        <CommonFrm:NavMenu MenuName="首页" MenuKey="首页" X="200"/>
+                        <CommonFrm:NavSelector x:Name="NavSelector" X="-452.5"/>
+                        <CommonFrm:NavMenu MenuName="首页" MenuKey="首页" X="200" IsSelected="True"/>
                         <CommonFrm:NavMenu MenuName="我的项目" MenuKey="我的项目" X="295"/>
                         <CommonFrm:NavMenu MenuName="工具箱" MenuKey="工具箱" X="390"/>
                         <CommonFrm:NavMenu MenuName="户型" MenuKey="户型" X="485"/>
@@ -44,10 +44,10 @@
                             Margin="0,0,6,0" IconWidth="18" IconHeight="14"
                             Style="{StaticResource IconMenu.Normal}"/>
                         <Rectangle Fill="#FF9C9C9A" Height="18" Width="1"/>
-                        <Custom:IconMenu 
+                        <Custom:IconMenu Margin="6,0,0,0"
                             x:Name="MenuMinimize" IconData="{StaticResource PathData.WindowMinimize}"
                             IconWidth="10" IconHeight="3" Style="{StaticResource IconMenu.Normal}"/>
-                        <Custom:IconMenu 
+                        <Custom:IconMenu Visibility="Collapsed"
                             x:Name="MenuMaximize" IconData="{StaticResource PathData.WindowMaximize}"
                             IconWidth="10" IconHeight="10" Style="{StaticResource IconMenu.Normal}"/>
                         <Custom:IconMenu 
@@ -62,7 +62,7 @@
 
             </Grid>
             <Grid x:Name="GdContent" Grid.RowSpan="2">
-                
+               
             </Grid>
         </Grid>
     </Border>

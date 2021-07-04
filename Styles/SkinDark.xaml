@@ -1,8 +1,8 @@
 ﻿<ResourceDictionary 
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <SolidColorBrush x:Key="Brush.Dark" Color="#FF1E2336"/>
-    <SolidColorBrush x:Key="Brush.Middle" Color="#FF2A3046"/>
+    <SolidColorBrush x:Key="Brush.Dark" Color="#FF1C1C1C"/>
+    <SolidColorBrush x:Key="Brush.Middle" Color="#FF2D2D30"/>
     <SolidColorBrush x:Key="Brush.Light" Color="#FF49A2FE"/>
     <LinearGradientBrush x:Key="Brush.Gradual" StartPoint="0,0.5" EndPoint="1,0.5">
         <GradientStop Color="#FF334ABB" Offset="0"/>

@@ -1,5 +1,9 @@
 ﻿using DuelUI.Common;
 using DuelUI.CommonFrm;
+using DuelUI.Modals;
+using DuelUI.Modals.About;
+using DuelUI.Modals.Message;
+using DuelUI.Modals.Setting;
 using DuelUI.Modules;
 using DuelUI.Modules.Home;
 using DuelUI.Modules.Model;
@@ -34,10 +38,11 @@ namespace DuelUI
         public MainWindow()
         {
             InitializeComponent();
-            this.AttachWindowEventHandlers();
-            this.LoadUserProtrait();
-            this.AttachNavMenuEventHanders();
             this.Loaded += MainWindow_Loaded;
+            this.LoadUserProtrait();
+            this.AttachWindowEventHandlers();
+            this.AttachNavMenuEventHanders();
+            this.AttachModalViewEventHandlers();
         }
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
@@ -46,6 +51,49 @@ namespace DuelUI
 
             this.CreatePageByNavMenuKey("首页");
         }
+
+        #region Modal Views
+
+        private void AttachModalViewEventHandlers()
+        {
+            this.MenuSetting.MouseLeftButtonDown += MenuSetting_MouseLeftButtonDown;
+            this.MenuEmail.MouseLeftButtonDown += MenuEmail_MouseLeftButtonDown;
+            this.RectPortrait.MouseLeftButtonDown += RectPortrait_MouseLeftButtonDown;
+        }
+
+        private void RectPortrait_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.GdContent.Children.Clear();
+            ModalViewAbout modelView = new ModalViewAbout();
+            modelView.OnReturn += ModelView_OnReturn;
+            this.GdContent.Children.Add(modelView);
+            e.Handled = true;
+        }
+
+        private void MenuEmail_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.GdContent.Children.Clear();
+            ModalViewMessage modelView = new ModalViewMessage();
+            modelView.OnReturn += ModelView_OnReturn;
+            this.GdContent.Children.Add(modelView);
+            e.Handled = true;
+        }
+
+        private void MenuSetting_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.GdContent.Children.Clear();
+            ModelViewSettings modelView = new ModelViewSettings();
+            modelView.OnReturn += ModelView_OnReturn;
+            this.GdContent.Children.Add(modelView);
+            e.Handled = true;
+        }
+
+        private void ModelView_OnReturn(BaseModalView sender)
+        {
+            this.GdContent.Children.Clear();
+        }
+
+        #endregion
 
         #region Window Events
 
@@ -83,10 +131,10 @@ namespace DuelUI
                 if (e.LeftButton == MouseButtonState.Pressed)
                     DragMove();
             }
-            else if (e.ClickCount == 2)
-            {
-                this.ResizeWindow();
-            }
+            //else if (e.ClickCount == 2)
+            //{
+            //    this.ResizeWindow();
+            //}
         }
 
         private void ResizeWindow()
@@ -198,6 +246,7 @@ namespace DuelUI
                     moduleView = new ModuleViewModel();
                 else if (sMenuKey == "商城")
                     moduleView = new ModuleViewStore();
+
                 this.GdMain.Children.Clear();
                 this.GdMain.Children.Add(moduleView);
                 this.HsPages.Add(sMenuKey, moduleView);
