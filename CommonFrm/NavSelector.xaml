@@ -1,0 +1,19 @@
+﻿<CommonFrm:BaseAnimView 
+    x:Class="DuelUI.CommonFrm.NavSelector"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:CommonFrm="clr-namespace:DuelUI.CommonFrm"
+    Height="50" Width="1600">
+    <UserControl.RenderTransform>
+        <TransformGroup>
+            <ScaleTransform ScaleX="{Binding Path=ScaleX}" ScaleY="{Binding Path=ScaleY}"/>
+            <RotateTransform Angle="{Binding Path=Angle}"/>
+            <TranslateTransform X="{Binding Path=X}" Y="{Binding Path=Y}"/>
+        </TransformGroup>
+    </UserControl.RenderTransform>
+    <Grid>
+        <Path Width="10" Stretch="Fill" Height="8" Fill="{DynamicResource Brush.Light}"
+              Data="M12 11L6 5l-6 6h12z" VerticalAlignment="Bottom"/>
+        <Rectangle Height="1" VerticalAlignment="Bottom" Fill="{DynamicResource Brush.NavSelector}"/>
+    </Grid>
+</CommonFrm:BaseAnimView>

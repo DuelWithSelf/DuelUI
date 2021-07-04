@@ -1,12 +1,69 @@
 ﻿<Window x:Class="DuelUI.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:DuelUI"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        xmlns:Custom="clr-namespace:DuelUI.Custom"
+        xmlns:CommonFrm="clr-namespace:DuelUI.CommonFrm"
+        WindowStyle="None" WindowState="Normal" WindowStartupLocation="CenterScreen"
+        Background="Transparent" AllowsTransparency="True"
+        Title="Duel UI" Height="796" Width="1280">
+    <Border Background="{DynamicResource Brush.Dark}" CornerRadius="8"
+            ClipToBounds="True">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Border x:Name="BdrHeader" CornerRadius="8,8,0,0" Background="{DynamicResource Brush.Middle}">
+                <Grid x:Name="GdHeader">
+                    <StackPanel Orientation="Horizontal">
+                        <Rectangle x:Name="RectPortrait" Width="36" Height="36" RadiusX="36" RadiusY="36"
+                                Margin="20,0,0,0" Fill="{DynamicResource Brush.Gray}"/>
+                        <TextBlock VerticalAlignment="Center"
+                                   Text="DuelWithSelf" Margin="10,0"
+                                   Foreground="White"/>
+                        <Custom:IconMenu Margin="-10,0,0,0"
+                            Style="{StaticResource IconMenu.Normal}"
+                            IconData="{StaticResource PathData.MenuDown}"
+                            IconWidth="8" IconHeight="8" FocusBackground="Transparent"/>
+                    </StackPanel>
+                    <Canvas x:Name="CvNavMenus">
+                        <CommonFrm:NavSelector x:Name="NavSelector" X="-552.5"/>
+                        <CommonFrm:NavMenu MenuName="首页" MenuKey="首页" X="200"/>
+                        <CommonFrm:NavMenu MenuName="我的项目" MenuKey="我的项目" X="295"/>
+                        <CommonFrm:NavMenu MenuName="工具箱" MenuKey="工具箱" X="390"/>
+                        <CommonFrm:NavMenu MenuName="户型" MenuKey="户型" X="485"/>
+                        <CommonFrm:NavMenu MenuName="商城" MenuKey="商城" X="580"/>
+                    </Canvas>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,10,0">
+                        <Custom:IconMenu 
+                            x:Name="MenuEmail" IconData="{StaticResource PathData.EmailOutline}"
+                            IconWidth="20" IconHeight="16" IsShowNotice="True" NoticeMargin="0,5,4,0"
+                            Style="{StaticResource IconMenu.Normal}"/>
+                        <Custom:IconMenu 
+                            x:Name="MenuSetting" IconData="{StaticResource PathData.BarsSolid}"
+                            Margin="0,0,6,0" IconWidth="18" IconHeight="14"
+                            Style="{StaticResource IconMenu.Normal}"/>
+                        <Rectangle Fill="#FF9C9C9A" Height="18" Width="1"/>
+                        <Custom:IconMenu 
+                            x:Name="MenuMinimize" IconData="{StaticResource PathData.WindowMinimize}"
+                            IconWidth="10" IconHeight="3" Style="{StaticResource IconMenu.Normal}"/>
+                        <Custom:IconMenu 
+                            x:Name="MenuMaximize" IconData="{StaticResource PathData.WindowMaximize}"
+                            IconWidth="10" IconHeight="10" Style="{StaticResource IconMenu.Normal}"/>
+                        <Custom:IconMenu 
+                            x:Name="MenuShutdown" IconData="{StaticResource PathData.Cross}"
+                            Style="{StaticResource IconMenu.Normal}" IconWidth="10" IconHeight="10"
+                            FocusBrush="Red"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <Grid x:Name="GdMain" Grid.Row="1">
+
+            </Grid>
+            <Grid x:Name="GdContent" Grid.RowSpan="2">
+                
+            </Grid>
+        </Grid>
+    </Border>
 </Window>

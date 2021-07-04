@@ -1,0 +1,12 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="clr-namespace:System;assembly=mscorlib">
+    <s:String x:Key="PathData.Cross">M14.348,14.849c-0.469,0.469-1.229,0.469-1.697,0L10,11.819l-2.651,3.029c-0.469,0.469-1.229,0.469-1.697,0  c-0.469-0.469-0.469-1.229,0-1.697l2.758-3.15L5.651,6.849c-0.469-0.469-0.469-1.228,0-1.697c0.469-0.469,1.228-0.469,1.697,0  L10,8.183l2.651-3.031c0.469-0.469,1.228-0.469,1.697,0c0.469,0.469,0.469,1.229,0,1.697l-2.758,3.152l2.758,3.15  C14.817,13.62,14.817,14.38,14.348,14.849z</s:String>
+    <s:String x:Key="PathData.WindowMaximize">M4,4H20V20H4V4M6,8V18H18V8H6Z</s:String>
+    <s:String x:Key="PathData.WindowRestore">M54,54V40H33V54H54M57,34V57H30V34H57M43,25H22V39H27V42H19V19H46V31H43V25Z</s:String>
+    <s:String x:Key="PathData.WindowMinimize">M20,14H4V10H20</s:String>
+    <s:String x:Key="PathData.EmailOutline">M4,4H20C21.1,4 22,4.9 22,6V18C22,19.1 21.1,20 20,20H4C2.89,20 2,19.1 2,18V6C2,4.89 2.89,4 4,4M12,11L20,6H4L12,11M4,18H20V8.37L12,13.36L4,8.37V18Z</s:String>
+    <s:String x:Key="PathData.BarsSolid">M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z</s:String>
+    <s:String x:Key="PathData.MenuDown">M7,10L12,15L17,10H7Z</s:String>
+</ResourceDictionary>

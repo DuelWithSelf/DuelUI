@@ -1,0 +1,56 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Custom="clr-namespace:DuelUI.Custom"
+    xmlns:local="clr-namespace:DuelUI">
+
+
+    <Style TargetType="{x:Type Custom:IconMenu}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Custom:IconMenu}">
+                    <Grid x:Name="Part_GdContainer" Background="Transparent">
+                        <Border x:Name="Part_BdrContainer" Background="{TemplateBinding Background}" 
+                               CornerRadius="{Binding Path=CornerRadius, RelativeSource={RelativeSource TemplatedParent}}"
+                               BorderBrush="{TemplateBinding BorderBrush}"
+                               BorderThickness="{TemplateBinding BorderThickness}">
+                            <Grid>
+                                <Path x:Name="Part_Icon" 
+                                  Width="{Binding Path=IconWidth, RelativeSource={RelativeSource TemplatedParent}}"
+                                  Height="{Binding Path=IconHeight, RelativeSource={RelativeSource TemplatedParent}}"
+                                  Data="{Binding Path=IconData, RelativeSource={RelativeSource TemplatedParent}}"
+                                  Fill="{Binding Path=IconBrush, RelativeSource={RelativeSource TemplatedParent}}"
+                                  Margin="{Binding Path=IconMargin, RelativeSource={RelativeSource TemplatedParent}}"
+                                  Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <Ellipse 
+                                    Width="5" Height="5" VerticalAlignment="Top" HorizontalAlignment="Right"
+                                    Fill="Red" x:Name="Part_Notice" Visibility="Collapsed"
+                                    Margin="{Binding Path=NoticeMargin, RelativeSource={RelativeSource TemplatedParent}}"/>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Part_BdrContainer" Property="Opacity" Value="0.3"/>
+                        </Trigger>
+                        <Trigger Property="IsShowNotice" Value="True">
+                            <Setter TargetName="Part_Notice" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="Part_Icon" Property="Fill" 
+                                    Value="{Binding Path=FocusBrush, RelativeSource={RelativeSource TemplatedParent}}"/>
+                            <Setter TargetName="Part_BdrContainer" Property="Background" 
+                                    Value="{Binding Path=FocusBackground, RelativeSource={RelativeSource TemplatedParent}}"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Part_Icon" Property="Fill" 
+                                    Value="{Binding Path=FocusBrush, RelativeSource={RelativeSource TemplatedParent}}"/>
+                            <Setter TargetName="Part_BdrContainer" Property="Background" 
+                                    Value="{Binding Path=FocusBackground, RelativeSource={RelativeSource TemplatedParent}}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

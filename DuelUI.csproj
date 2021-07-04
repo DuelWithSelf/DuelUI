@@ -54,6 +54,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="CommonFrm\NavMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommonFrm\NavSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -62,12 +70,80 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="CommonFrm\BaseAnimView.cs" />
+    <Compile Include="CommonFrm\NavMenu.xaml.cs">
+      <DependentUpon>NavMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommonFrm\NavSelector.xaml.cs">
+      <DependentUpon>NavSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\AppEvents.cs" />
+    <Compile Include="Custom\IconMenu.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Modules\Home\ModuleViewHome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modules\Model\ModuleViewModel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modules\Preview\PreviewView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modules\Project\ModuleViewProject.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modules\Store\ModuleViewStore.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modules\Tools\ModuleViewTools.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\DicPaths.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\SkinDark.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\SkinLight.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modules\BaseModuleView.cs" />
+    <Compile Include="Modules\Home\ModuleViewHome.xaml.cs">
+      <DependentUpon>ModuleViewHome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Model\ModuleViewModel.xaml.cs">
+      <DependentUpon>ModuleViewModel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Preview\PreviewView.xaml.cs">
+      <DependentUpon>PreviewView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Project\ModuleViewProject.xaml.cs">
+      <DependentUpon>ModuleViewProject.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Store\ModuleViewStore.xaml.cs">
+      <DependentUpon>ModuleViewStore.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Tools\ModuleViewTools.xaml.cs">
+      <DependentUpon>ModuleViewTools.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -93,5 +169,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
