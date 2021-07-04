@@ -36,6 +36,10 @@
                     </Canvas>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,10,0">
                         <Custom:IconMenu 
+                            x:Name="MenuAbout" IconData="{StaticResource PathData.Info}"
+                            IconWidth="20" IconHeight="20"
+                            Style="{StaticResource IconMenu.Normal}"/>
+                        <Custom:IconMenu 
                             x:Name="MenuEmail" IconData="{StaticResource PathData.EmailOutline}"
                             IconWidth="20" IconHeight="16" IsShowNotice="True" NoticeMargin="0,5,4,0"
                             Style="{StaticResource IconMenu.Normal}"/>

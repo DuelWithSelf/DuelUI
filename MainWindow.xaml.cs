@@ -4,6 +4,7 @@ using DuelUI.Modals;
 using DuelUI.Modals.About;
 using DuelUI.Modals.Message;
 using DuelUI.Modals.Setting;
+using DuelUI.Modals.User;
 using DuelUI.Modules;
 using DuelUI.Modules.Home;
 using DuelUI.Modules.Model;
@@ -59,12 +60,22 @@ namespace DuelUI
             this.MenuSetting.MouseLeftButtonDown += MenuSetting_MouseLeftButtonDown;
             this.MenuEmail.MouseLeftButtonDown += MenuEmail_MouseLeftButtonDown;
             this.RectPortrait.MouseLeftButtonDown += RectPortrait_MouseLeftButtonDown;
+            this.MenuAbout.MouseLeftButtonDown += MenuAbout_MouseLeftButtonDown;
+        }
+
+        private void MenuAbout_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.GdContent.Children.Clear();
+            ModalViewAbout modelView = new ModalViewAbout();
+            modelView.OnReturn += ModelView_OnReturn;
+            this.GdContent.Children.Add(modelView);
+            e.Handled = true;
         }
 
         private void RectPortrait_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             this.GdContent.Children.Clear();
-            ModalViewAbout modelView = new ModalViewAbout();
+            ModalViewUser modelView = new ModalViewUser();
             modelView.OnReturn += ModelView_OnReturn;
             this.GdContent.Children.Add(modelView);
             e.Handled = true;

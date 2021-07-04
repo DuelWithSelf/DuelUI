@@ -101,6 +101,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Modals\User\ModalViewUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Modules\Home\ModuleViewHome.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -152,6 +156,9 @@
     </Compile>
     <Compile Include="Modals\Setting\ModelViewSettings.xaml.cs">
       <DependentUpon>ModelViewSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modals\User\ModalViewUser.xaml.cs">
+      <DependentUpon>ModalViewUser.xaml</DependentUpon>
     </Compile>
     <Compile Include="Modules\BaseModuleView.cs" />
     <Compile Include="Modules\Home\ModuleViewHome.xaml.cs">
